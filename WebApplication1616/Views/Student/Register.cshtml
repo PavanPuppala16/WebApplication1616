@@ -1,0 +1,108 @@
+﻿@using WebApplication1616.Models
+@model Model
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>How To Create Simple Login Form Design In Bootstrap 5</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://www.markuptag.com/bootstrap/5/css/bootstrap.min.css">
+</head>
+<body>
+   
+
+
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 offset-md-3">
+                    <div class="signup-form mt-5 border p-4 bg-light shadow">
+                        @using (Html.BeginForm())
+                        {
+                            <h4 class="mb-5 text-secondary">Create Your Account</h4>
+                            <div class="row">
+                                <div class="mb-3 col-md-6">
+                                    <label>RollNo<span class="text-danger">*</span></label>
+                                    @Html.TextBoxFor(model => model.ROLLNO, new { @class = "form-control", placeholder="Enter Roll No" })
+                                </div>
+                                <div class="mb-3 col-md-6">
+                                    <label> Name<span class="text-danger">*</span></label>
+                                    @Html.TextBoxFor(model => model.NAME, new { @class = "form-control", placeholder="Enter Name" })
+
+                                </div>
+                                <div class="mb-3 col-md-12">
+                                    <label>EmailID<span class="text-danger">*</span></label>
+                                    @Html.TextBoxFor(model => model.EMAILID, new { @class = "form-control", placeholder="Enter EmailID" })
+                                </div>
+                                <div class="mb-3 col-md-6">
+                                    <label>Password<span class="text-danger">*</span></label>
+                                    @Html.TextBoxFor(model => model.PASSWORD, new { @class = "form-control", placeholder="Enter Password" })
+                                </div>
+                                <div class="mb-3 col-md-6">
+                                    <label>Confirm Password<span class="text-danger">*</span></label>
+                                    @Html.TextBoxFor(model => model.ConfirmPassword, new { @class = "form-control", placeholder="ReEnter Password" })
+                                </div>
+                                <div class="mb-3 col-md-6">
+                                    <label>DOB<span class="text-danger">*</span></label>
+                                    @Html.TextBoxFor(model => model.DOB, new { @class = "form-control", placeholder="Enter DOB" })
+                                </div>
+                                <div class="mb-3 col-md-12">
+                                    <label>Gender<span class="text-danger">*</span></label>
+                                    @Html.RadioButtonFor(model => model.GENDER, true, new { id = "male-true"  })
+                                    @Html.Label("male-true", "Male")
+                                    @Html.RadioButtonFor(model => model.GENDER, false, new { id = "female-true"})
+                                    @Html.Label("female-true", "Female")
+                                </div>
+                                <div class="mb-3 col-md-6">
+                                    <label>Mobile<span class="text-danger">*</span></label>
+                                    @Html.TextBoxFor(model => model.MOBILE, new { @class = "form-control", placeholder="Enter Mobile" })
+                                </div>
+                                <div class="mb-3 col-md-6">
+                                    <label>Fee Details<span class="text-danger">*</span></label>
+                                    @Html.TextBoxFor(model => model.Fee, new { @class = "form-control", placeholder="Enter Fee" })
+                                </div>
+                                <div class="mb-3 col-md-6">
+                                    <label>Branch<span class="text-danger">*</span></label>
+                                    @Html.DropDownListFor(model => model.BRANCH, new List<SelectListItem> {
+                                new SelectListItem { Text="--Select--",Value="0"},
+                                new SelectListItem { Text="CSE",Value="CSE"},
+                                new SelectListItem { Text="EEE",Value="EEE"},
+                                new SelectListItem { Text="Mech",Value="Mech"},
+                                new SelectListItem { Text="IT",Value="IT"},
+                                new SelectListItem { Text="Civil",Value="Civil"}
+                                }, new { @class = "form-control" })
+                                </div>
+                                <div class="mb-3 col-md-6">
+                                    <label>Status<span class="text-danger">*</span></label>
+                                    @Html.DropDownListFor(model => model.status, new List<SelectListItem> {
+                                new SelectListItem { Text="--Select--",Value="0"},
+                                new SelectListItem { Text="Active",Value="1"},
+                                new SelectListItem { Text="InActive",Value="0"}
+                                }, new { @class = "form-control" })
+                                </div>
+
+
+
+
+                                <div class="col-md-7">
+                                    <p class="text-center mt-3 text-secondary">If you have account,  @Html.ActionLink("Login","Login","Student")</p>
+                                </div>
+                                <div class="col-md-5">
+                                    <input type="submit" class="btn btn-primary float-end" value="Submit">
+                                </div>
+                            </div>
+                        }
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </body>
+</html>
+
+

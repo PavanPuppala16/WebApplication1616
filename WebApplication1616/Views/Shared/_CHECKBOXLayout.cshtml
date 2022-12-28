@@ -1,0 +1,118 @@
+﻿@using Microsoft.AspNetCore.Http;
+@inject IHttpContextAccessor HttpContextAccessor
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <style>
+        /* Remove the navbar's default margin-bottom and rounded borders */
+        .navbar {
+            margin-bottom: 0;
+            border-radius: 0;
+        }
+
+        /* Add a gray background color and some padding to the footer */
+        footer {
+            background-color: #f2f2f2;
+            padding: 25px;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#">PAVANPUPPALA1616</a>
+            </div>
+            <div class="collapse navbar-collapse" id="myNavbar">
+                <ul class="nav navbar-nav">
+                    <li class="active"><a href="#">Home</a></li>
+
+                    WelcomeBack: @HttpContextAccessor.HttpContext.Session.GetString("UserName")
+                    Login at : @HttpContextAccessor.HttpContext.Session.GetString("Time")
+
+
+                    <li class="active"><a href="#"> @Html.ActionLink("ADMIN","ADMIN","STD")</a></li>
+                    <li class="active"><a href="#"> @Html.ActionLink("LIBRARY","LIBRARY","STD")</a></li>
+                    <li class="active"><a href="#"> @Html.ActionLink("CONTACT","CONTACT","STD")</a></li>
+                    <li class="active"><a href="#"> @Html.ActionLink("CHECKBOX","CHECKBOX","STD")</a></li>
+                      <li class="active"><a href="#"> @Html.ActionLink("DISPLAYDATA","DisplayData","STD")</a></li>
+                    <li class="active"><a href="#"> @Html.ActionLink("OTPVARIFICATION","VerifyOtp","STD")</a></li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+                    @Html.ActionLink("ADMIN","ADMIN","STD")
+                    @Html.ActionLink("OTPVARIFICATION","VerifyOtp","STD")
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="jumbotron">
+        <div class="container text-center">
+            <h1 class="navbar">WELCOME PAVANPUPPALA1616</h1>
+            <p>Some text About "Me"...</p>
+        </div>
+    </div>
+    <div class="container-fluid bg-3 text-center">
+        <h3></h3><br>
+        <div class="row">
+            <div class="col-sm-3">
+                <p> @Html.ActionLink("INSERTDATA","DESIGN","INSERTCHECKBOX")</p>
+                <img src="https://365datascience.com/resources/blog/2017-11-SQL-insert-pic-min-1024x576.png" class="img-responsive" style="width:100%" alt="Image">
+
+            </div>
+
+            <div class="jumbotron">
+                <div class="container text-center">
+                    <h1 class="navbar">WELCOME PAVANPUPPALA1616</h1>
+                    <p>Some text About "Me"...</p>
+                </div>
+            </div>
+
+            <div class="container-fluid bg-3 text-center">
+                <h3></h3><br>
+                <div class="row">
+                    <div class="col-sm-3">
+                        <p> @Html.ActionLink("Login","Login","STD")</p>
+                        <img src="https://image.shutterstock.com/shutterstock/photos/225749503/display_1500/stock-vector-member-login-flat-design-white-225749503.jpg" class="img-responsive" style="width:70%" alt="Image">
+
+                    </div>
+                    <div class="col-sm-3">
+                        <p>@Html.ActionLink("Registration","REGISTER","STD") </p>
+                        <img src="https://thumbs.dreamstime.com/b/registration-online-membership-network-internet-business-technology-concept-104512007.jpg" class="img-responsive" style="width:100%" alt="Image">
+                    </div>
+                    <div class="col-sm-3">
+                        <p>STUDENT DATA</p>
+                        <img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive" style="width:100%" alt="Image">
+                    </div>
+                    <div class="col-sm-3">
+                        <p>LIBRARY</p>
+                        <img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive" style="width:100%" alt="Image">
+                    </div>
+                </div>
+            </div>
+            <br>
+
+
+    <div>
+        @RenderBody()
+    </div>
+    <footer class="container-fluid text-center">
+        <p>Footer Text</p>
+    </footer>
+
+</body>
+</html>

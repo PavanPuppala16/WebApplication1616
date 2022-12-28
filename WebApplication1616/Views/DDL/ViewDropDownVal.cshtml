@@ -1,0 +1,13 @@
+﻿
+@{
+    ViewData["Title"] = "ViewDropDownVal";
+    Layout = "~/Views/Shared/_UserLayout.cshtml";
+}
+
+<h3>ViewDropDownVal</h3>
+@Html.BeginForm("ViewDropDownVal","ddl",FormMethod.Post)
+{
+    @Html.DropDownList("test", new SelectList(ViewBag.data, "CustomerID", "CustomerID"), "Please select", new { @id = "customer" })
+    <input type="submit" value="submit" />
+}
+

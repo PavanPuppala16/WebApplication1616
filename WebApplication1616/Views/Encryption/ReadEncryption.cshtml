@@ -1,0 +1,27 @@
+﻿@using WebApplication1616.Models;
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<h1>ViewDataEx</h1>
+@using (Html.BeginForm())
+{
+    <table class="table">
+        <tr>
+            <td>REFID</td>
+            <td>EMAILID</td>
+            <td>PASSWORD</td>
+        </tr>
+        @foreach (var item in TempData["EmpList"] as List<WebApplication1616.Models.EncryptionModel>)
+        {
+            <tr>
+                <td>@item.REFID</td>
+                <td>@item.EMAILID</td>
+                <td>@item.PASSWORD</td>
+            </tr>
+        }
+    </table>
+}
+

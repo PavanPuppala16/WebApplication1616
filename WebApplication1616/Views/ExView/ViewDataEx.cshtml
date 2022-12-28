@@ -1,0 +1,26 @@
+﻿@using WebApplication1616.Models;
+@{
+    ViewData["Title"] = "ViewDataEx";
+    Layout = "~/Views/Shared/_UserLayout.cshtml";
+}
+
+<h1>ViewDataEx</h1>
+@using (Html.BeginForm())
+{
+    <table class="table">
+        <tr>
+            <td>EID</td>
+            <td>Name</td>
+            <td>Address</td>
+        </tr>
+        @foreach (var item in TempData["EmpList"] as List<WebApplication1616.Models.viewDataModel>)
+        {
+            <tr>
+                <td>@item.Eid</td>
+                <td>@item.Name</td>
+                <td>@item.Address</td>
+            </tr>
+        }
+    </table>
+}
+
